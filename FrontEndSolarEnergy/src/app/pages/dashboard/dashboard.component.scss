@@ -1,0 +1,54 @@
+.principal{
+    display: flex;
+    background-color: #FAFAFA;
+}
+.container.row{
+    width: 100%;
+    margin: 0 auto;
+}
+.content{
+    width: 100%;
+    .title{
+        background-color: #ffffff;
+        padding: 15px;
+        h1{
+            font-size: 36px;
+            color: #374557;
+            font-weight: 700;
+        }
+    }
+}
+
+.card{
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid #DFE0EB;
+    background-color: #ffffff;
+    cursor: pointer;
+    h5{
+        font-size: 19px;
+        font-weight: 700;
+        color: #9FA2B4;
+        text-align: center;
+    }
+    h6{
+        font-size: 40px;
+        font-weight: 700;
+        color: #252733;
+        text-align: center;
+    }
+    &:hover{
+        border: 1px solid #3751FF;
+        h5{
+            color: #3751FF;
+        }
+        h6{
+            color: #3751FF!important; 
+        }
+    }
+}
+pro-footer{
+    position: relative;
+    bottom: -30px;
+    width: 100%;
+}

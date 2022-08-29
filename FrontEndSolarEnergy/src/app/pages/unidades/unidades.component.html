@@ -1,0 +1,47 @@
+<div class="principal">
+    <pro-sidebar></pro-sidebar>
+    <div class="content">
+        <div class="container title">
+            <h1>Unidades</h1>
+        </div>
+        <div class="container">
+            <h2>Lista de unidades</h2>
+            <table>
+                <thead>
+                    <th>#</th>
+                    <th>ID</th>
+                    <th>Apelido</th>
+                    <th>Local</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th></th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let unidade of listaUnidades|async" [ngStyle]="{
+                        'color':unidade.isActive?'':'#a8aaad'
+                    }">
+                        <th><span class="marcador" [ngStyle]="{
+                            'backgroundColor':unidade.isActive?'#42b80c':'#df2626'
+                        }"></span></th>
+                        <th>{{ unidade.id }}</th>
+                        <th>{{ unidade.apelido | titlecase }}</th>
+                        <th>{{ unidade.local | titlecase }}</th>
+                        <th>{{ unidade.marca | titlecase }}</th>
+                        <th>{{ unidade.modelo }}</th>
+                        <th><button class="btn btn-success" (click)="editarUnid(unidade.id)"><i class="fa-regular fa-pen-to-square"></i></button></th>
+                        <th><button class="btn btn-danger" (click)="removerUnid(unidade.id)"><i class="fa-regular fa-trash-can"></i></button></th>
+                    </tr>
+                </tbody>
+            </table>
+            <p><span class="ativo"></span><small> - Unidades Ativa</small></p>
+            <p><span class="inativo"></span><small> - Unidades Inativa</small></p>
+        </div>
+        <div class="container novaUnidade">
+            <button (click)="cadastroUnidades()">Nova Unidade</button>
+        </div>
+    
+
+    </div>
+</div>
+<pro-footer></pro-footer>

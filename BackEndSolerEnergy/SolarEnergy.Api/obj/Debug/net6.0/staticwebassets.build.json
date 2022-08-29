@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "OJWfQAjGBYJlntEGRyXrrmn5+6QrTQyFq+61Sm96BHU=",
+  "Source": "SolarEnergy.Api",
+  "BasePath": "_content/SolarEnergy.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

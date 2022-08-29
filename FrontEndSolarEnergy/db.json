@@ -1,0 +1,94 @@
+{
+  "geracao": [
+    {
+      "id_unid": 577,
+      "data": "2022-01",
+      "kw": 90,
+      "id": 53
+    },
+    {
+      "id_unid": 39,
+      "data": "2022-03",
+      "kw": 100,
+      "id": 17
+    },
+    {
+      "id_unid": 435,
+      "data": "2022-02",
+      "kw": 80,
+      "id": 69
+    },
+    {
+      "id_unid": 176,
+      "data": "2022-05",
+      "kw": 120,
+      "id": 8
+    },
+    {
+      "id_unid": 577,
+      "data": "2022-04",
+      "kw": 100,
+      "id": 40
+    },
+    {
+      "id_unid": 308,
+      "data": "2022-06",
+      "kw": 90,
+      "id": 13
+    },
+    {
+      "id_unid": 577,
+      "data": "2022-06",
+      "kw": 100,
+      "id": 88
+    },
+    {
+      "id_unid": 577,
+      "data": "2022-07",
+      "kw": 120,
+      "id": 59
+    }
+  ],
+  "unidades": [
+    {
+      "apelido": "painel 1",
+      "local": "rua 5",
+      "marca": "canadian",
+      "modelo": "155w",
+      "isActive": true,
+      "id": 577
+    },
+    {
+      "apelido": "Painel 2",
+      "local": "rua 15",
+      "marca": "risen",
+      "modelo": "100w",
+      "isActive": true,
+      "id": 39
+    },
+    {
+      "apelido": "painel 3",
+      "local": "ria de Janeiro",
+      "marca": "hanwha",
+      "modelo": "200w",
+      "isActive": true,
+      "id": 435
+    },
+    {
+      "apelido": "painel 8",
+      "local": "guarulhos",
+      "marca": "Resun",
+      "modelo": "200w",
+      "isActive": true,
+      "id": 674
+    },
+    {
+      "apelido": "Painel 9",
+      "local": "Santos",
+      "marca": "Resun",
+      "modelo": "100w",
+      "isActive": false,
+      "id": 299
+    }
+  ]
+}

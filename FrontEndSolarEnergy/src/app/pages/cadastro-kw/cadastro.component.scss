@@ -1,0 +1,59 @@
+.principal{
+    display: flex;
+    background-color: #FAFAFA;
+}
+.content{
+    width: 100%;
+    .title{
+        background-color: #ffffff;
+        padding: 15px;
+        h1{
+            font-size: 36px;
+            color: #374557;
+            font-weight: 700;
+        }
+    }
+}
+form{
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    label{
+        font-size: 32px;
+        font-weight: 700;
+        color: #53575D;
+    }
+    select, input{
+        width: 70%;
+        border-radius: 4px;
+        background-color: #FBFCFF;
+        border: 1px solid #DFE0EB;
+        height: 59px;
+        font-size: 24px;
+        padding-left: 15px;
+        color: #88888f;
+    }
+    .mesAno{
+        width: 70%;
+        height: 59px;
+        color: #88888f;
+        outline: none;
+    }
+    button{
+        width: 200px;
+        padding: 16px 24px;
+        border-radius: 20px;
+        background-color: #4c5df1;
+        box-shadow: 0 20px 50px #37455723;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 500;
+        border: none;
+    }
+
+}
+pro-footer{
+    position: absolute;
+    bottom: -10;
+    width: 100%;
+}
