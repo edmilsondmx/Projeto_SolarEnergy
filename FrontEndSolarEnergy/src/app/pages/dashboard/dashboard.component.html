@@ -1,0 +1,42 @@
+<div class="principal">
+    <pro-sidebar></pro-sidebar>
+    <div class="content">
+        <div class="container title">
+            <h1>Dashboard</h1>
+        </div>
+    
+        <div class="container row d-flex">
+            <div class="card col me-3">
+                <div class="card-body">
+                    <h5 class="card-title">Total unidades</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ totalDeUnidades }}</h6>
+
+                </div>
+            </div>
+            <div class="card col me-3">
+                <div class="card-body">
+                    <h5 class="card-title">Unidades Ativas</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ unidadesAtivas }}</h6>
+
+                </div>
+            </div>
+            <div class="card col me-3">
+                <div class="card-body">
+                    <h5 class="card-title">Unidades Inativas</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ unidadesInativas }}</h6>
+
+                </div>
+            </div>
+            <div class="card col me-3">
+                <div class="card-body">
+                    <h5 class="card-title">Média de energia</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ mediaDeEnergia || 0 }}kw</h6>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <pro-grafico></pro-grafico>
+        </div>
+    </div>
+</div>
+<pro-footer></pro-footer>
