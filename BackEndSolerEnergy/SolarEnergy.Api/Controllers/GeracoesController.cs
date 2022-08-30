@@ -19,25 +19,15 @@ public class GeracoesController : ControllerBase
 
     [HttpGet]
     public ActionResult<List<Geracao>> Get(
-        [FromQuery] int? unidadeId,
-        [FromQuery] DateTime? dataMax,
-        [FromQuery] DateTime? dataMin
+        [FromQuery] int? unidadeId
     )
     {
         var query = _context.Geracoes.AsQueryable();
-        if(dataMin > dataMax) return BadRequest();
 
         if(unidadeId.HasValue)
             query = query.Where(g => g.UnidadeId == unidadeId);
 
-        if (dataMax.HasValue)
-            query = query.Where(g => g.Data <= dataMax.Value);
-        
-        if (dataMin.HasValue)
-            query = query.Where(g => g.Data >= dataMin.Value);
-
-        return Ok(
-            query
+        return Ok(query
             .ToList()
             );
     }
@@ -47,7 +37,9 @@ public class GeracoesController : ControllerBase
         [FromRoute] int id
     )
     {
-        var geracao = _context.Geracoes.Find(id);
+        var geracao = _context.Geracoes
+            .Include(g => g.Unidade)
+            .Where(g => g.Id == id);
 
         if(geracao == null) return NotFound();
 
@@ -60,14 +52,14 @@ public class GeracoesController : ControllerBase
     )
     {
         var unidade = _context.Unidades.Find(geracaoDto.UnidadeId);
-        if(unidade == null) return BadRequest();
+        if(unidade == null) return BadRequest("Unidade não encontrada!");
+        if(unidade.IsActive == false) return BadRequest("Unidade desativada!");
 
         var existeDataCadastrada = _context.Geracoes
-            .Any(g => g.Data.Month == geracaoDto.Data.Month 
-            && g.Data.Year == geracaoDto.Data.Year 
+            .Any(g => g.Data == geracaoDto.Data 
             && g.UnidadeId == geracaoDto.UnidadeId);
             
-        if(existeDataCadastrada) return BadRequest();
+        if(existeDataCadastrada) return BadRequest("Data já cadastrada no sistema!");
 
         var geracao = new Geracao(
             geracaoDto.Data,
