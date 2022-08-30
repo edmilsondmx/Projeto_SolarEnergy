@@ -39,13 +39,6 @@ export class DashboardComponent implements OnInit {
     this.totalunidades();
     this.isActive();
     this.mediaEnergia();
-    /* this.unidadeService.devolverUnidade()
-    .subscribe((result:IUnidades[]) =>{
-      this.listaUnidades = result;
-      this.totalunidades();
-      this.isActive();
-      this.mediaEnergia();
-    }) */
   }
 
   //método que inclui a quantidade de unidades da lista na variavel
@@ -82,18 +75,6 @@ export class DashboardComponent implements OnInit {
         }
       }
     })
-    /* this.unidadeService.devolverGeracao()
-    .subscribe((result:IGeracao[]) =>{
-      this.listaGeracao = result;
-      if(this.listaGeracao.length){
-        let totalEnergia = this.listaGeracao.reduce((soma, item) => (soma + item.kw), 0) / this.unidadesAtivas;
-        if(this.unidadesAtivas == 0){
-          this.mediaDeEnergia = 0;
-        } else{
-          this.mediaDeEnergia = totalEnergia.toFixed(0);
-        }
-      }
-    }) */
   }
 
 }

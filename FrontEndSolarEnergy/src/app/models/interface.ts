@@ -11,6 +11,6 @@ export interface IGeracao {
     id:number
     data:string;
     kw:number;
-    id_unid:number;
+    unidadeId:number;
 }
 
