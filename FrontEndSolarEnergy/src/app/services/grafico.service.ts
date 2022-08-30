@@ -40,7 +40,5 @@ export class GraficoService {
         this.valoresKw[11] += item.kw;
       }
     })
-    
-    
   }
 }

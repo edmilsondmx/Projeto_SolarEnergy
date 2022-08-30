@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
+import { Observable } from 'rxjs';
 import { IGeracao } from 'src/app/models/interface';
 import { GraficoService } from 'src/app/services/grafico.service';
+import { SolarEnergyApiService } from 'src/app/services/SolarEnergyApi.service';
 import { UnidadesService } from 'src/app/services/unidades.service';
 
 @Component({
@@ -16,11 +18,12 @@ export class GraficoComponent implements OnInit {
   mostrarGrafico:boolean = false;
 
   //variável qu guarda a lista de gerações em json-server
-  listaGeracao:IGeracao[] = [];  
+  listaGeracao!:Observable<IGeracao[]>;  
 
   constructor(
     private unidadeService:UnidadesService,
-    private graficoService:GraficoService) { }
+    private graficoService:GraficoService,
+    private solarEnergyService:SolarEnergyApiService) { }
 
   
   ngOnInit(): void {
@@ -64,10 +67,9 @@ export class GraficoComponent implements OnInit {
 
   //metodo que busca as gerações do json-server, busca informações do service e coloca nas configurações do grafico
   buscarGeracao(){
-    this.unidadeService.devolverGeracao()
-    .subscribe((result:IGeracao[]) =>{
-      this.listaGeracao = result; 
-      this.buscarGrafico(this.listaGeracao)
+    this.listaGeracao = this.solarEnergyService.getListGeracoes();
+    this.listaGeracao.subscribe((result) => {
+      this.buscarGrafico(result);
     })
   }
 
