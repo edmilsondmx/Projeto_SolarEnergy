@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+Hojr4dlNYOMUa6fkQ5JZ0E3UhCGGz0t9+lELhoy+jTG/3pGtMcjaTpSouUvOzQaFiVktNcCnyBx0j9w1t7xiQ==",
+  "dgSpecHash": "h+ihSM9ql5gXFh7SUc7YilqlfqXXSYERUaC49Vj63klss60/6OJiuXJBmQQG+RK63LPXH6dgUcxW0GtNBy6+Ng==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Edmilson\\Documents\\DevinHouse\\Módulo 2\\BackEndSolerEnergy\\SolarEnergy.Api\\SolarEnergy.Api.csproj",
+  "projectFilePath": "c:\\Users\\Edmilson\\Documents\\Estudos\\Projeto_SolarEnergy\\BackEndSolerEnergy\\SolarEnergy.Api\\SolarEnergy.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Edmilson\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Edmilson\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
