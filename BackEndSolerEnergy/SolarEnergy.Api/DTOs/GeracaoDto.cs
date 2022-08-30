@@ -5,9 +5,8 @@ namespace SolarEnergy.Api.DTOs;
 public class GeracaoDto
 {
     [Required(ErrorMessage = "A data é obrigatória")]
-    [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
-    [DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
-    public DateTime Data { get; set; }
+    [StringLength(7, MinimumLength = 7, ErrorMessage = "A data deve conter ano e mês(2022-05)")]
+    public string Data { get; set; }
     [Required(ErrorMessage = "O Kw é obrigatório")]
     public int Kw { get; set; }
     [Required(ErrorMessage = "O Id da Unidade é obrigatório")]
