@@ -8,5 +8,5 @@ public interface IUnidadeRepository
     Unidade GetById(int id);
     void Post(Unidade unidade);
     void Put(Unidade unidade);
-    void Delete(int id);
+    void Delete(Unidade unidade);
 }
