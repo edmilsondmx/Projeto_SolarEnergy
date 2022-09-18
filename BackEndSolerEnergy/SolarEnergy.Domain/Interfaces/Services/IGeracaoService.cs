@@ -6,7 +6,7 @@ public interface IGeracaoService
 {
     IList<GeracaoDto> Get();
     GeracaoDto GetById(int id);
-    void Post(GeracaoDto unidade);
-    void Put(GeracaoDto unidade);
+    void Post(GeracaoDto geracao);
+    void Put(GeracaoDto geracao);
     void Delete(int id);
 }
