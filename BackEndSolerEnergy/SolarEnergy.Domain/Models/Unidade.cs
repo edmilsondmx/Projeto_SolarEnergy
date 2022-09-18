@@ -1,3 +1,5 @@
+using SolarEnergy.Api.DTOs;
+
 namespace SolarEnergy.Api.Models;
 
 public class Unidade
@@ -8,7 +10,7 @@ public class Unidade
     public string Marca { get; set; }
     public string Modelo { get; set; }
     public bool IsActive { get; set; }
-    public List<Geracao> Geracoes { internal get; set; }
+    public virtual List<Geracao> Geracoes { get; set; }
     public Unidade(string apelido, string local, string marca, string modelo, bool isActive)
     {
         Apelido = apelido;
@@ -20,5 +22,23 @@ public class Unidade
     public Unidade()
     {
         
+    }
+    public Unidade(UnidadeDto unidade)
+    {
+        Id = unidade.Id;
+        Apelido = unidade.Apelido;
+        Local = unidade.Local;
+        Marca = unidade.Marca;
+        Modelo = unidade.Modelo;
+        IsActive = unidade.IsActive;
+    }
+
+    public void Update(UnidadeDto unidade)
+    {
+        Apelido = unidade.Apelido;
+        Local = unidade.Local;
+        Marca = unidade.Marca;
+        Modelo = unidade.Modelo;
+        IsActive = unidade.IsActive;
     }
 }
