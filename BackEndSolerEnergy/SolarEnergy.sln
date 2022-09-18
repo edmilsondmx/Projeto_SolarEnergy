@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarEnergy.Api", "SolarEnergy.Api\SolarEnergy.Api.csproj", "{8E383F40-FAA0-4840-B456-DCAD63B9163B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarEnergy.Domain", "SolarEnergy.Domain\SolarEnergy.Domain.csproj", "{4D1E19DC-5566-4F93-AAF1-14BDBEC1166B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarEnergy.Infra", "SolarEnergy.Infra\SolarEnergy.Infra.csproj", "{FA67A366-A159-456D-AD04-7A8899621F8C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{8E383F40-FAA0-4840-B456-DCAD63B9163B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E383F40-FAA0-4840-B456-DCAD63B9163B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E383F40-FAA0-4840-B456-DCAD63B9163B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D1E19DC-5566-4F93-AAF1-14BDBEC1166B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D1E19DC-5566-4F93-AAF1-14BDBEC1166B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D1E19DC-5566-4F93-AAF1-14BDBEC1166B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D1E19DC-5566-4F93-AAF1-14BDBEC1166B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA67A366-A159-456D-AD04-7A8899621F8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA67A366-A159-456D-AD04-7A8899621F8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA67A366-A159-456D-AD04-7A8899621F8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA67A366-A159-456D-AD04-7A8899621F8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
