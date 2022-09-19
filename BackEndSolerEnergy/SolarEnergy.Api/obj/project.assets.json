@@ -3195,6 +3195,33 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "SolarEnergy.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/SolarEnergy.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SolarEnergy.Domain.dll": {}
+        }
+      },
+      "SolarEnergy.Infra/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.8",
+          "Microsoft.EntityFrameworkCore.Abstractions": "6.0.8",
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.8",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8",
+          "SolarEnergy.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SolarEnergy.Infra.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SolarEnergy.Infra.dll": {}
+        }
       }
     }
   },
@@ -9994,6 +10021,16 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "SolarEnergy.Domain/1.0.0": {
+      "type": "project",
+      "path": "../SolarEnergy.Domain/SolarEnergy.Domain.csproj",
+      "msbuildProject": "../SolarEnergy.Domain/SolarEnergy.Domain.csproj"
+    },
+    "SolarEnergy.Infra/1.0.0": {
+      "type": "project",
+      "path": "../SolarEnergy.Infra/SolarEnergy.Infra.csproj",
+      "msbuildProject": "../SolarEnergy.Infra/SolarEnergy.Infra.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -10006,6 +10043,8 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.8",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.8",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.8",
+      "SolarEnergy.Domain >= 1.0.0",
+      "SolarEnergy.Infra >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
@@ -10040,7 +10079,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "c:\\Users\\Edmilson\\Documents\\Estudos\\Projeto_SolarEnergy\\BackEndSolerEnergy\\SolarEnergy.Domain\\SolarEnergy.Domain.csproj": {
+              "projectPath": "c:\\Users\\Edmilson\\Documents\\Estudos\\Projeto_SolarEnergy\\BackEndSolerEnergy\\SolarEnergy.Domain\\SolarEnergy.Domain.csproj"
+            },
+            "c:\\Users\\Edmilson\\Documents\\Estudos\\Projeto_SolarEnergy\\BackEndSolerEnergy\\SolarEnergy.Infra\\SolarEnergy.Infra.csproj": {
+              "projectPath": "c:\\Users\\Edmilson\\Documents\\Estudos\\Projeto_SolarEnergy\\BackEndSolerEnergy\\SolarEnergy.Infra\\SolarEnergy.Infra.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

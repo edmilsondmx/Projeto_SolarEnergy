@@ -3,76 +3,54 @@ using Microsoft.EntityFrameworkCore;
 using SolarEnergy.Api.Data;
 using SolarEnergy.Api.DTOs;
 using SolarEnergy.Api.Models;
+using SolarEnergy.Domain.Interfaces.Services;
 
 namespace SolarEnergy.Api.Controllers;
 
 [ApiController]
-[Route("api/unidades")]
+[Route("api/[controller]")]
 public class UnidadesController : ControllerBase
 {
-    private readonly SolarDbContext _context;
+    private readonly IUnidadeService _unidadeService;
 
-    public UnidadesController(SolarDbContext context)
+    public UnidadesController(IUnidadeService unidadeService)
     {
-        _context = context;
+        _unidadeService = unidadeService;
     }
 
     [HttpGet]
-    public ActionResult<List<Unidade>> Get()
+    public IActionResult Get()
     {
-        return _context.Unidades.ToList();
+        return Ok(_unidadeService.Get());
     }
 
     [HttpGet("{id}")]
-    public ActionResult<Unidade> GetById(
+    public IActionResult GetById(
         [FromRoute] int id
     )
     {
-        var unidade = _context.Unidades
-            .Include(u => u.Geracoes)
-            .Where(u => u.Id == id)
-            .FirstOrDefault();
-
-        if(unidade == null) return NotFound();
-
-        return Ok(unidade);
+        return Ok(_unidadeService.GetById(id));
     }
 
     [HttpPost]
-    public ActionResult<Unidade> Post(
+    public IActionResult Post(
         [FromBody] UnidadeDto unidadeDto
     )
     {
-        var unidade = new Unidade(
-            unidadeDto.Apelido,
-            unidadeDto.Local,
-            unidadeDto.Marca,
-            unidadeDto.Modelo,
-            unidadeDto.IsActive
-        );
-
-        _context.Unidades.Add(unidade);
-        _context.SaveChanges();
-        return Created("api/unidades", unidade);
+        _unidadeService.Post(unidadeDto);
+        return Created("api/unidades", unidadeDto);
     }
     
     [HttpPut("{id}")]
-    public ActionResult<Unidade> Put(
+    public IActionResult Put(
         [FromBody] UnidadeDto unidadeDto,
         [FromRoute] int id
     )
     {
-        var unidade = _context.Unidades.Find(id);
-        if(unidade == null) return NotFound();
+        unidadeDto.Id = id;
+        _unidadeService.Put(unidadeDto);
 
-        unidade.Apelido = unidadeDto.Apelido;
-        unidade.Local = unidadeDto.Local;
-        unidade.Marca = unidadeDto.Marca;
-        unidade.Modelo = unidadeDto.Modelo;
-        unidade.IsActive = unidadeDto.IsActive;
-
-        _context.SaveChanges();
-        return Ok(unidade);    
+        return Ok();   
     }
 
     [HttpDelete("{id}")]
@@ -80,12 +58,7 @@ public class UnidadesController : ControllerBase
         [FromRoute] int id
     )
     {
-        var unidade = _context.Unidades.Find(id);
-        if(unidade == null) return NotFound();
-
-        _context.Unidades.Remove(unidade);
-        _context.SaveChanges();
-
+        _unidadeService.Delete(id);
         return NoContent();
     }
 }

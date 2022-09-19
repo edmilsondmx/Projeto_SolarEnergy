@@ -1,5 +1,6 @@
 using SolarEnergy.Api.DTOs;
 using SolarEnergy.Api.Models;
+using SolarEnergy.Domain.Exceptions;
 using SolarEnergy.Domain.Interfaces.Repositories;
 using SolarEnergy.Domain.Interfaces.Services;
 
@@ -8,9 +9,11 @@ namespace SolarEnergy.Domain.Services;
 public class GeracaoService : IGeracaoService
 {
     private readonly IGeracaoRepository _geracaoRepository;
-    public GeracaoService(IGeracaoRepository geracaoRepository)
+    private readonly IUnidadeRepository _unidadeRepository;
+    public GeracaoService(IGeracaoRepository geracaoRepository, IUnidadeRepository unidadeRepository)
     {
         _geracaoRepository = geracaoRepository;
+        _unidadeRepository = unidadeRepository;
     }
 
     public void Delete(int id)
@@ -33,7 +36,24 @@ public class GeracaoService : IGeracaoService
 
     public void Post(GeracaoDto geracao)
     {
+        if(UnidadeEhAtiva(geracao.UnidadeId))
+            throw new UnidadeInativaException("Unidade Inativa!");
+        
+        if(DataCadastrada(geracao))
+            throw new DataJaCadastradaException("Data já cadastrada no sistema!");
+
         _geracaoRepository.Post(new Geracao(geracao));
+    }
+    private bool DataCadastrada(GeracaoDto geracao)
+    {
+        return _geracaoRepository.Get()
+            .Any(g => g.Data == geracao.Data && g.Id == geracao.Id);
+    }
+    private bool UnidadeEhAtiva(int idUnidade)
+    {
+        var unidade = _unidadeRepository.GetById(idUnidade);
+
+        return(unidade.IsActive != true);
     }
 
     public void Put(GeracaoDto geracao)
