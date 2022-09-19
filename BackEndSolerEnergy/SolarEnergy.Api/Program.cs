@@ -1,5 +1,7 @@
 using SolarEnergy.Api.Data;
 using Microsoft.OpenApi.Models;
+using SolarEnergy.Infra.DataBase.Repositories;
+using SolarEnergy.Domain.Interfaces.Repositories;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
@@ -27,6 +29,9 @@ builder.Services.AddSwaggerGen( options =>
         });
 });
 builder.Services.AddDbContext<SolarDbContext>();
+
+builder.Services.AddScoped<IUnidadeRepository, UnidadeRepository>();
+builder.Services.AddScoped<IGeracaoRepository, GeracaoRepository>();
 
 builder.Services.AddCors(options => 
 {
