@@ -34,7 +34,7 @@ builder.Services.AddSwaggerGen( options =>
             {
                 Name = "Edmilson Gomes",
                 Url = new Uri("https://github.com/edmilsondmx"),
-                Email = "edmilsondmx@gmail.com"
+                Email = "edmilsondmx@gmail.com",
             }
         });
 });
