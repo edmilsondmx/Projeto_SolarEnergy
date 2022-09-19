@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using SolarEnergy.Api.Models;
+using SolarEnergy.Domain.Models;
 using SolarEnergy.Infra.DataBase.Mappings;
 
 namespace SolarEnergy.Api.Data;
@@ -16,6 +17,7 @@ public class SolarDbContext : DbContext
 
     public DbSet<Unidade> Unidades { get; set; }
     public DbSet<Geracao> Geracoes { get; set; }
+    public DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -32,5 +34,7 @@ public class SolarDbContext : DbContext
         modelBuilder.ApplyConfiguration(new UnidadeMap());
 
         modelBuilder.ApplyConfiguration(new GeracaoMap());
+
+        modelBuilder.ApplyConfiguration(new UserMap());
     }
 }
