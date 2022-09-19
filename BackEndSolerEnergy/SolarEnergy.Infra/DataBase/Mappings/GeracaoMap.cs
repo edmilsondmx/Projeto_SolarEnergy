@@ -14,7 +14,6 @@ public class GeracaoMap : IEntityTypeConfiguration<Geracao>
 
         builder
             .Property(g => g.Data)
-            .HasColumnType("DATE")
             .IsRequired();
 
         builder

@@ -47,7 +47,7 @@ public class GeracaoService : IGeracaoService
     private bool DataCadastrada(GeracaoDto geracao)
     {
         return _geracaoRepository.Get()
-            .Any(g => g.Data == geracao.Data && g.Id == geracao.Id);
+            .Any(g => g.Data == geracao.Data && g.UnidadeId == geracao.UnidadeId);
     }
     private bool UnidadeEhAtiva(int idUnidade)
     {
