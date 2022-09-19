@@ -16,8 +16,10 @@ builder.Services.AddDbContext<SolarDbContext>();
 
 builder.Services.AddScoped<IUnidadeRepository, UnidadeRepository>();
 builder.Services.AddScoped<IGeracaoRepository, GeracaoRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUnidadeService, UnidadeService>();
 builder.Services.AddScoped<IGeracaoService, GeracaoService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
