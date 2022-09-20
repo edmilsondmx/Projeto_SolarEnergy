@@ -1,4 +1,5 @@
 using SolarEnergy.Domain.Enuns;
+using SolarEnergy.Domain.Models;
 
 namespace SolarEnergy.Domain.DTOs;
 
@@ -9,4 +10,17 @@ public class UserDto
     public string Email { get; set; }
     public string Password { get; set; }
     public Permissoes Role { get; set; }
+
+    public UserDto(User user)
+    {
+        Id = user.Id;
+        Nome = user.Nome;
+        Email = user.Email;
+        Password = user.Password;
+        Role = user.Role;
+    }
+    public UserDto()
+    {
+        
+    }
 }
