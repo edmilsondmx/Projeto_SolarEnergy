@@ -40,6 +40,11 @@ public class ErrorMiddleware
             status = HttpStatusCode.NotAcceptable;
             message = ex.Message;
         }
+        else if(ex is UserNaoEncontradoException)
+        {
+            status = HttpStatusCode.Forbidden;
+            message = ex.Message;
+        }
         else
         {
             status = HttpStatusCode.InternalServerError;
