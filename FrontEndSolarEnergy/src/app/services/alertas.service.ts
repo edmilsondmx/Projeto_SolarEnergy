@@ -83,4 +83,16 @@ export class AlertasService {
       cancelButtonText: 'Cancelar'
     })
   }
+
+  alertaUserNaoEncontrado(){
+    Swal.fire({
+      position: 'top',
+      text: '❌ ERRO: Usuário não encontrado',
+      width: 350,
+      color: '#D82D56',
+      background: '#f7d2db',
+      showConfirmButton: false,
+      timer: 1000
+    })
+  }
 }

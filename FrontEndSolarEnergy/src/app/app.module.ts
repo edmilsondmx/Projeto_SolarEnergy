@@ -15,38 +15,9 @@ import { GraficoComponent } from './components/grafico/grafico.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EditarUnidComponent } from './components/editar-unid/editar-unid.component';
 import { SolarEnergyApiService } from './services/SolarEnergyApi.service';
-
-const ROUTES:Route[] = [
-  {
-    path:'',
-    component:LoginComponent
-  },
-  {
-    path:'dashboard',
-    component:DashboardComponent
-  },
-  {
-    path:'unidades',
-    children:[
-      {
-        path:'',
-        component:UnidadesComponent
-      },
-      {
-        path:'cadastro-unidades',
-        component:CadastroUnidComponent
-      },
-      {
-        path:'editar-unidades',
-        component:EditarUnidComponent
-      }
-    ]
-  },
-  {
-    path:'cadastro',
-    component:CadastroComponent
-  }
-]
+import { AuthGuard } from './pages/login/auth.guard';
+import { AppRoutingModule } from './app-routing.module';
+import { LoginService } from './services/Login.service';
 
 @NgModule({
   declarations: [
@@ -59,17 +30,17 @@ const ROUTES:Route[] = [
     CadastroUnidComponent,
     GraficoComponent,
     FooterComponent,
-    EditarUnidComponent
+    EditarUnidComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(ROUTES),
     HttpClientModule,
-    NgChartsModule
+    NgChartsModule,
+    AppRoutingModule,
   ],
-  providers: [SolarEnergyApiService],
-  bootstrap: [AppComponent]
+  providers: [SolarEnergyApiService, AppRoutingModule, AuthGuard, LoginService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
