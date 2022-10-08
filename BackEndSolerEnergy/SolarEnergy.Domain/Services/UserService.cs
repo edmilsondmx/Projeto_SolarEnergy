@@ -35,7 +35,7 @@ public class UserService : IUserService
         return new UserDto(userDb);
     }
 
-    public void GetUser(LoginDto login)
+    public Tuple<string, string> GetUser(LoginDto login)
     {
         User userDb = _userRepository.Get().ToList().FirstOrDefault(u => u.Email == login.Email && u.Password == login.Password);
 
@@ -43,7 +43,10 @@ public class UserService : IUserService
             throw new UserNaoEncontradoException("Usuário não encontrado");
 
         var token = TokenService.GenerateToken(userDb);
-        
+        var refreshToken = TokenService.GenerateRefreshToken();
+        TokenService.SaveRefreshToken(userDb.Nome, refreshToken);
+
+        return new Tuple<string, string>(token, refreshToken);      
     }
 
     public void Post(UserDto user)
@@ -70,7 +73,7 @@ public class UserService : IUserService
         _userRepository.Put(userDb);
     }
 
-    public void RefreshToken(string token, string refreshToken)
+    public Tuple<string, string> RefreshToken(string token, string refreshToken)
     {
         var principal = TokenService.GetPrincipalFromExpiredToken(token);
         var userName = principal.Identity.Name;
@@ -83,5 +86,7 @@ public class UserService : IUserService
         var newRefreshToken = TokenService.GenerateRefreshToken();
         TokenService.DeleteRefreshToken(userName, refreshToken);
         TokenService.SaveRefreshToken(userName, newRefreshToken);
+
+        return new Tuple<string, string>(newToken, newRefreshToken);
     }
 }
