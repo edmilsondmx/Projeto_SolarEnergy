@@ -1,14 +1,10 @@
-using SolarEnergy.Api.Data;
 using Microsoft.OpenApi.Models;
-using SolarEnergy.Infra.DataBase.Repositories;
-using SolarEnergy.Domain.Interfaces.Repositories;
-using SolarEnergy.Domain.Interfaces.Services;
-using SolarEnergy.Domain.Services;
 using SolarEnergy.Api.Config;
 using System.Text;
 using SolarEnergy.Domain.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using SolarEnergy.Di.Ioc;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
@@ -16,35 +12,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddDbContext<SolarDbContext>();
-
-builder.Services.AddScoped<IUnidadeRepository, UnidadeRepository>();
-builder.Services.AddScoped<IGeracaoRepository, GeracaoRepository>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IUnidadeService, UnidadeService>();
-builder.Services.AddScoped<IGeracaoService, GeracaoService>();
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.RegisterServices();
+builder.Services.RegisterRepositories();
 
 builder.Services.AddControllers();
 
 var key = Encoding.ASCII.GetBytes(Settings.Secret);
 
-builder.Services.AddAuthentication(x => {
-    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-})
-.AddJwtBearer(x =>
-{
-    x.RequireHttpsMetadata = false;
-    x.SaveToken = true;
-    x.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(key),
-        ValidateIssuer = false,
-        ValidateAudience = false
-    };
-});
+builder.Services.RegisterAuthentication();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen( options => 
@@ -61,7 +37,32 @@ builder.Services.AddSwaggerGen( options =>
                 Url = new Uri("https://github.com/edmilsondmx"),
                 Email = "edmilsondmx@gmail.com",
             }
+        }
+    );
+    options.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, new OpenApiSecurityScheme
+        {
+            Description =   @"JWT Authorization header using the Bearer scheme. 
+                            Escreva 'Bearer' [espaço] e o token gerado no login na caixa abaixo.
+                            Exemplo: 'Bearer 12345abcdef'",
+            Name = "Authorization",
+            In = ParameterLocation.Header,
+            Type = SecuritySchemeType.ApiKey,
+            Scheme = "Bearer"
         });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement()
+    {
+        {
+            new OpenApiSecurityScheme
+                {
+                Reference = new OpenApiReference
+                    {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = JwtBearerDefaults.AuthenticationScheme
+                    },
+                },
+            new List<string>()
+        }
+    });
 });
 
 builder.Services.AddCors(options => 
