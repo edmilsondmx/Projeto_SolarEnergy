@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SolarEnergy.Api.Data;
+using SolarEnergy.Infra.DataBase;
 
 #nullable disable
 
-namespace SolarEnergy.Api.Data.Migrations
+namespace SolarEnergy.Infra.DataBase.Migrations
 {
     [DbContext(typeof(SolarDbContext))]
     partial class SolarDbContextModelSnapshot : ModelSnapshot

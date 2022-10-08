@@ -1,5 +1,5 @@
-using SolarEnergy.Api.Data;
-using SolarEnergy.Api.Models;
+using SolarEnergy.Infra.DataBase;
+using SolarEnergy.Domain.Models;
 using SolarEnergy.Domain.Interfaces.Repositories;
 
 namespace SolarEnergy.Infra.DataBase.Repositories;

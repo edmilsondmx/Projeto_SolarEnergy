@@ -1,4 +1,4 @@
-using SolarEnergy.Api.Data;
+using SolarEnergy.Infra.DataBase;
 using SolarEnergy.Domain.Interfaces.Repositories;
 using SolarEnergy.Domain.Models;
 

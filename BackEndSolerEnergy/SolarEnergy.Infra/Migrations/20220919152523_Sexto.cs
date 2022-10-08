@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace SolarEnergy.Api.Data.Migrations
+namespace SolarEnergy.Infra.DataBase.Migrations
 {
     public partial class Sexto : Migration
     {

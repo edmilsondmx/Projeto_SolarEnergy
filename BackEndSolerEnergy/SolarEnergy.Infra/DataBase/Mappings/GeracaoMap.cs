@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SolarEnergy.Api.Models;
+using SolarEnergy.Domain.Models;
 
 namespace SolarEnergy.Infra.DataBase.Mappings;
 

@@ -1,8 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using SolarEnergy.Api.Data;
-using SolarEnergy.Api.DTOs;
-using SolarEnergy.Api.Models;
+using SolarEnergy.Domain.DTOs;
 using SolarEnergy.Domain.Interfaces.Services;
 
 namespace SolarEnergy.Api.Controllers;

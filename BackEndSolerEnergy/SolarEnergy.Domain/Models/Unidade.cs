@@ -1,6 +1,6 @@
-using SolarEnergy.Api.DTOs;
+using SolarEnergy.Domain.DTOs;
 
-namespace SolarEnergy.Api.Models;
+namespace SolarEnergy.Domain.Models;
 
 public class Unidade
 {

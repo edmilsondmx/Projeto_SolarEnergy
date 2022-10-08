@@ -1,9 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using SolarEnergy.Api.Data;
-using SolarEnergy.Api.DTOs;
-using SolarEnergy.Api.Models;
+using SolarEnergy.Domain.DTOs;
 using SolarEnergy.Domain.Interfaces.Services;
+using SolarEnergy.Domain.Models;
 
 namespace SolarEnergy.Api.Controllers;
 
@@ -56,7 +54,7 @@ public class GeracoesController : ControllerBase
     }
     
     [HttpPut("{id}")]
-    public ActionResult<Geracao> Put(
+    public IActionResult Put(
         [FromBody] GeracaoDto geracaoDto,
         [FromRoute] int id
     )

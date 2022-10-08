@@ -1,5 +1,5 @@
-using SolarEnergy.Api.DTOs;
-using SolarEnergy.Api.Models;
+using SolarEnergy.Domain.DTOs;
+using SolarEnergy.Domain.Models;
 using SolarEnergy.Domain.Exceptions;
 using SolarEnergy.Domain.Interfaces.Repositories;
 using SolarEnergy.Domain.Interfaces.Services;

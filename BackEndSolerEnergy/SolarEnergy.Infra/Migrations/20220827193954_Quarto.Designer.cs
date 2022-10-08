@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SolarEnergy.Api.Data;
+using SolarEnergy.Infra.DataBase;
 
 #nullable disable
 
-namespace SolarEnergy.Api.Data.Migrations
+namespace SolarEnergy.Infra.DataBase.Migrations
 {
     [DbContext(typeof(SolarDbContext))]
     [Migration("20220827193954_Quarto")]

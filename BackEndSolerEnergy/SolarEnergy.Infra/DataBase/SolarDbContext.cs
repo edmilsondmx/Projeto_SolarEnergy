@@ -1,10 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using SolarEnergy.Api.Models;
 using SolarEnergy.Domain.Models;
 using SolarEnergy.Infra.DataBase.Mappings;
 
-namespace SolarEnergy.Api.Data;
+namespace SolarEnergy.Infra.DataBase;
 
 public class SolarDbContext : DbContext
 {
