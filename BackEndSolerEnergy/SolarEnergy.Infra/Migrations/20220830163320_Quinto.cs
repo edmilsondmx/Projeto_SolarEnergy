@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace SolarEnergy.Api.Data.Migrations
+namespace SolarEnergy.Infra.DataBase.Migrations
 {
     public partial class Quinto : Migration
     {

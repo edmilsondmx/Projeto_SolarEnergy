@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
-using SolarEnergy.Api.Models;
+using SolarEnergy.Domain.Models;
 
-namespace SolarEnergy.Api.DTOs;
+namespace SolarEnergy.Domain.DTOs;
 
 public class GeracaoDto
 {

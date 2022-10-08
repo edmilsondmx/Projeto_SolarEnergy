@@ -1,4 +1,4 @@
-using SolarEnergy.Api.Data;
+using SolarEnergy.Infra.DataBase;
 
 namespace SolarEnergy.Infra.DataBase.Repositories;
 

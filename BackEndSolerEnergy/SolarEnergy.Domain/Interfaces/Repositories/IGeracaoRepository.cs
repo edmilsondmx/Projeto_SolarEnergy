@@ -1,4 +1,4 @@
-using SolarEnergy.Api.Models;
+using SolarEnergy.Domain.Models;
 
 namespace SolarEnergy.Domain.Interfaces.Repositories;
 

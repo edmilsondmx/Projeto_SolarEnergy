@@ -534,3 +534,6 @@ c:\Users\Edmilson\Documents\Estudos\Projeto_SolarEnergy\BackEndSolerEnergy\Solar
 c:\Users\Edmilson\Documents\Estudos\Projeto_SolarEnergy\BackEndSolerEnergy\SolarEnergy.Api\bin\Debug\net6.0\SolarEnergy.Infra.dll
 c:\Users\Edmilson\Documents\Estudos\Projeto_SolarEnergy\BackEndSolerEnergy\SolarEnergy.Api\bin\Debug\net6.0\SolarEnergy.Domain.pdb
 c:\Users\Edmilson\Documents\Estudos\Projeto_SolarEnergy\BackEndSolerEnergy\SolarEnergy.Api\bin\Debug\net6.0\SolarEnergy.Infra.pdb
+c:\Users\Edmilson\Documents\Estudos\Projeto_SolarEnergy\BackEndSolerEnergy\SolarEnergy.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+c:\Users\Edmilson\Documents\Estudos\Projeto_SolarEnergy\BackEndSolerEnergy\SolarEnergy.Api\bin\Debug\net6.0\SolarEnergy.Di.dll
+c:\Users\Edmilson\Documents\Estudos\Projeto_SolarEnergy\BackEndSolerEnergy\SolarEnergy.Api\bin\Debug\net6.0\SolarEnergy.Di.pdb

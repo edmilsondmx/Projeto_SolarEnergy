@@ -1,4 +1,4 @@
-using SolarEnergy.Api.DTOs;
+using SolarEnergy.Domain.DTOs;
 
 namespace SolarEnergy.Domain.Interfaces.Services;
 
