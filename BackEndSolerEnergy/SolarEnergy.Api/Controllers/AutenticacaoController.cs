@@ -27,8 +27,7 @@ public class AutenticacaoController : ControllerBase
         [FromBody] LoginDto login
     )
     {
-        _userService.GetUser(login);
-        return Ok();
+        return Ok(_userService.GetUser(login));
     }
 
     [HttpPost]
@@ -39,7 +38,7 @@ public class AutenticacaoController : ControllerBase
         [FromQuery] string refreshToken
     )
     {
-        _userService.RefreshToken(token, refreshToken);
-        return Ok();
+        
+        return Ok(_userService.RefreshToken(token, refreshToken));
     }
 }

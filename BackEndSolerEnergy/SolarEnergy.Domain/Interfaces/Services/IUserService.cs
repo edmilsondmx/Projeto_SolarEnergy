@@ -6,9 +6,9 @@ public interface IUserService
 {
     IList<UserDto> Get();
     UserDto GetById(int id);
-    void GetUser(LoginDto login);
+    Tuple<string, string> GetUser(LoginDto login);
     void Post(UserDto user);
     void Put(UserDto user);
     void Delete(int id);
-    void RefreshToken(string token, string refreshToken);
+    Tuple<string, string> RefreshToken(string token, string refreshToken);
 }
