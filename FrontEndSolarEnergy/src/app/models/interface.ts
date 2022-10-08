@@ -8,9 +8,21 @@ export interface IUnidades {
 }
 
 export interface IGeracao {
-    id:number
+    id:number;
     data:string;
     kw:number;
     unidadeId:number;
+}
+
+export interface ILogin {
+    email:string;
+    password:string;
+}
+
+export interface IUser {
+    id:number;
+    nome:string;
+    email:string;
+    role:string
 }
 

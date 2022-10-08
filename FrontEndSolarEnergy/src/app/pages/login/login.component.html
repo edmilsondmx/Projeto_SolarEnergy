@@ -9,7 +9,7 @@
             <div class="input-login">
                 <i class="fas fa-envelope"></i>
                 <input 
-                [(ngModel)]="email"
+                [(ngModel)]="user.email"
                 type="email" 
                 name="email"
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
@@ -22,7 +22,7 @@
             <div class="input-login">
                 <i class="fas fa-lock"></i>
                 <input
-                [(ngModel)]="senha"
+                [(ngModel)]="user.password"
                 name="senha"
                 id="password"
                 type="password" 
