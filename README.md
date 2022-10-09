@@ -33,9 +33,9 @@ $ git clone https://github.com/edmilsondmx/Projeto_SolarEnergy
 </ul>
 
 ```bash
-        login: admin@email.com
-        senha: 101010
-        ```
+login: admin@email.com
+senha: 101010
+```
 
 
 ## Autor
