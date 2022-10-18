@@ -1,0 +1,59 @@
+<div class="d-flex row">
+    <img class="img-login col-6" src="./assets/imagens/imagem_signup.png" alt="">
+    <div class="col-6">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <img class="img-logo" src="./assets/imagens/Logo.png" alt="">
+            <p class="saudacao">Faça seu Cadastro</p>
+        </div>
+        <form #form="ngForm" (ngSubmit)="cadastrar()" class="signup d-flex flex-column justify-content-center align-items-center ">
+            <div class="input-signup">
+                <i class="fa-solid fa-user"></i>
+                <input 
+                [(ngModel)]="newUser.nome"
+                type="text" 
+                name="nome"
+                class="nome-input" 
+                placeholder="Nome Completo"
+                required>
+            </div>
+            <div class="input-signup" for="">
+                <i class="fas fa-envelope"></i>
+                <input 
+                [(ngModel)]="newUser.email"
+                type="email" 
+                name="email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                placeholder="Email"
+                #endemail="ngModel"
+                required>
+            </div>
+            <small *ngIf="!( endemail.valid || endemail.pristine )" class="text-danger" >*E-mail fora do formato devido!
+            </small>
+            <div class="input-signup" for="">
+                <i class="fas fa-lock"></i>
+                <input 
+                [(ngModel)]="newUser.password"
+                type="password" 
+                name="password"
+                id="password"
+                placeholder="Password" 
+                minlength="6"
+                #password="ngModel"
+                required 
+                class="senha">
+                <abbr title="Mostrar"><i *ngIf="!visualizar" class="fas fa-eye icon-modify" (click)="visualizarSenha()"></i></abbr>
+                <abbr title="Esconder"><i *ngIf="visualizar" class="fa-solid fa-eye-slash" (click)="visualizarSenha()"></i></abbr>
+            </div>
+            <small *ngIf="!( password.valid || password.pristine )" class="text-danger" >*A senha deve conter 6 dígitos!
+            </small>
+            <button 
+            type="submit" 
+            class="btn btn-second"
+            [disabled]="!form.valid"
+            >Cadastrar</button>
+        </form>
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <button routerLink="/login" id="login" class="btn btn-secondary">Conecte-se</button>
+        </div>
+    </div>
+</div>

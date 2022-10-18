@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;400;500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    background-color: #FAFAFA;
+}
+.d-flex{
+    animation: flip-vertical-right 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    
+}
+.img-login{
+    width: 50%;
+    height: 100vh;
+}
+.saudacao{
+    font-size: 24px;
+    font-weight: 500;
+    color: #374557;
+    font-family: 'Roboto Slab', serif;
+}
+.img-logo{
+    width: 250px;
+}
+
+.signup{
+    .input-signup{
+        width: 350px;
+        height: 55px;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-top: 19px;
+        padding: 10px;
+        input{
+            width: 80%;
+            border: none;
+            margin-left: 10px;
+            padding: 5px;
+            outline: 0;
+        }
+        i{
+            color:#A098AE;
+        }
+    }
+    button{
+        width: 350px;
+        height: 55px;
+        border: none;
+        border-radius: 10px;
+        margin-top: 19px;
+        background-color: #4CBC9A;
+        color: #ffffff;
+        font-weight: 500;
+        font-family: 'Roboto Slab', serif;
+        &:hover{
+            color: #ffffff;
+            background-color: #4CBC9A;
+        } 
+    }
+}
+
+#login{
+    width: 350px;
+    height: 25px;
+    margin-top: 9px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 800;
+    font-family: 'Courier New', Courier, monospace;  
+    transition: 0.5s;
+    &:hover{
+        color: #ffffff;
+        background-color: #4CBC9A;
+    }  
+}
+
+@keyframes flip-vertical-right {
+    0% {
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+    }
+    100% {
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg);
+    }
+  }
+  
