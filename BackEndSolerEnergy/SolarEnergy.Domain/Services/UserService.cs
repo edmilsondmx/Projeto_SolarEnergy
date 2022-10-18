@@ -35,7 +35,7 @@ public class UserService : IUserService
         return new UserDto(userDb);
     }
 
-    public Tuple<string, string> GetUser(LoginDto login)
+    public Tuple<string, string, string> GetUser(LoginDto login)
     {
         User userDb = _userRepository.Get().ToList().FirstOrDefault(u => u.Email == login.Email && u.Password == login.Password);
 
@@ -46,7 +46,7 @@ public class UserService : IUserService
         var refreshToken = TokenService.GenerateRefreshToken();
         TokenService.SaveRefreshToken(userDb.Nome, refreshToken);
 
-        return new Tuple<string, string>(token, refreshToken);      
+        return new Tuple<string, string, string>(token, refreshToken, userDb.Nome);      
     }
 
     public void Post(UserDto user)

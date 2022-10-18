@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SolarEnergy.Domain.DTOs;
 using SolarEnergy.Domain.Interfaces.Services;
@@ -51,6 +52,7 @@ public class UnidadesController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize (Roles = "Admin")]
     public ActionResult Delete(
         [FromRoute] int id
     )
