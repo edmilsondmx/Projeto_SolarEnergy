@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { IUnidades, IGeracao } from '../models/interface';
+import { IUnidades, IGeracao, IUser } from '../models/interface';
+import { AppConstants } from '../app-constants';
 
 @Injectable({
   providedIn: 'root'
@@ -50,6 +51,11 @@ export class SolarEnergyApiService {
   }
   deleteGeracao(id:number|string){
     return this.http.delete(`${this.solarEnergyApiUrl}geracoes/${id}`);
+  }
+
+  //Métodos Usuarios
+  postUsuarios(newUser:IUser){
+    return this.http.post(AppConstants.baseUsers, newUser);
   }
 
 }

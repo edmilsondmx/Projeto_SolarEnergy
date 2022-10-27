@@ -10,9 +10,11 @@ import { AuthGuard } from './pages/login/auth.guard';
 import { LoginComponent } from './pages/login/login.component';
 import { AppComponent } from './app.component';
 import { NgxLoadingModule } from 'ngx-loading';
+import { CadastroUserComponent } from './pages/cadastroUser/cadastro.user.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'cadastro-user', component: CadastroUserComponent },
   {
     path: 'dashboard',
     component: DashboardComponent,

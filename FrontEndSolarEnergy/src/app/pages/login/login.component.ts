@@ -1,6 +1,8 @@
+import { HttpEvent, HttpHandler, HttpRequest } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { finalize, Observable, Subject } from 'rxjs';
 import { ILogin } from 'src/app/models/interface';
 import { AlertasService } from 'src/app/services/alertas.service';
 import { LoginService } from 'src/app/services/Login.service';
@@ -11,6 +13,8 @@ import { LoginService } from 'src/app/services/Login.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
+  public loading = false;
 
   //variável que faz a troca de mostrar ou esconder password
   visualizar:boolean = false;
@@ -31,7 +35,18 @@ export class LoginComponent implements OnInit {
   }
 
   public entrar(){
-    this.loginService.login(this.user);
+    this.loading = true;
+    this.loginService.login(this.user)
+      .subscribe((result) => {
+        this.loading = false;
+        this.loginService.salvarTokenLocalStorage(result);
+      },
+      error => {
+        this.loading = false;
+        console.error("Erro ao efetuar login");
+        this.alertasService.alertaUserNaoEncontrado();
+      }
+      )
   }
 
 

@@ -23,6 +23,7 @@ export interface IUser {
     id:number;
     nome:string;
     email:string;
-    role:string
+    password:string;
+    role:number
 }
 

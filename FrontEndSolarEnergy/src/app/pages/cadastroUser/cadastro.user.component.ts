@@ -12,6 +12,9 @@ import { SolarEnergyApiService } from 'src/app/services/SolarEnergyApi.service';
   styleUrls: ['./cadastro.user.component.scss']
 })
 export class CadastroUserComponent implements OnInit {
+
+  public loading = false;
+
   visualizar:boolean = false;
 
   newUser:IUser = {
@@ -34,9 +37,18 @@ export class CadastroUserComponent implements OnInit {
   }
 
   cadastrar(){
-    console.log(this.newUser)
-    this.alertasService.loader();
-    this.cadastroService.cadastrar(this.newUser);
+    this.loading = true;
+    this.cadastroService.cadastrar(this.newUser)
+    .subscribe((response) => {
+      this.loading = false;
+      this.router.navigate(['/login']);
+    },
+      error => {
+        this.loading = false;
+        console.error("Erro ao efetuar cadastro");
+        //this.alertasService.alertaErroCadastro();
+      }
+    )
   }
 
   visualizarSenha(){

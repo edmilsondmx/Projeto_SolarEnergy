@@ -18,6 +18,8 @@ import { SolarEnergyApiService } from './services/SolarEnergyApi.service';
 import { AuthGuard } from './pages/login/auth.guard';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginService } from './services/Login.service';
+import { CadastroUserComponent } from './pages/cadastroUser/cadastro.user.component';
+import { NgxLoadingModule } from "ngx-loading";
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { LoginService } from './services/Login.service';
     GraficoComponent,
     FooterComponent,
     EditarUnidComponent,
+    CadastroUserComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,8 @@ import { LoginService } from './services/Login.service';
     HttpClientModule,
     NgChartsModule,
     AppRoutingModule,
+    NgxLoadingModule.forRoot({})
+    
   ],
   providers: [SolarEnergyApiService, AppRoutingModule, AuthGuard, LoginService],
   bootstrap: [AppComponent],

@@ -5,7 +5,7 @@
             <img class="img-logo" src="./assets/imagens/Logo.png" alt="">
             <p class="saudacao">Seja bem vindo</p>
         </div>
-        <form #form="ngForm" (ngSubmit)="entrar(); form.reset()" class="login d-flex flex-column justify-content-center align-items-center">
+        <form #form="ngForm" (ngSubmit)="entrar()" class="login d-flex flex-column justify-content-center align-items-center">
             <div class="input-login">
                 <i class="fas fa-envelope"></i>
                 <input 
@@ -40,5 +40,9 @@
             [disabled]="!form.valid"
             >Entrar</button>
         </form>  
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <button routerLink="/cadastro-user" id="singup" class="btn btn-secondary">Cadastre-se</button>
+        </div>
+        <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
     </div>
 </div>

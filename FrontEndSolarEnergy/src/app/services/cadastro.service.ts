@@ -15,15 +15,6 @@ export class CadastroService {
     private solarEnergyApi:SolarEnergyApiService) { }
 
   cadastrar(newUser:IUser){
-    this.solarEnergyApi.postUsuarios(newUser)
-      .subscribe((response) => {
-        this.alertasService.alertaUserCadastrado();
-        this.router.navigate(['/login']);
-      },
-        error => {
-          console.log("Erro ao efetuar cadastro");
-          this.alertasService.alertaErroCadastro();
-        }
-      )
+    return this.solarEnergyApi.postUsuarios(newUser)
   }
 }

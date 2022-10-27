@@ -5,6 +5,10 @@
     margin: 0;
     background-color: #FAFAFA;
 }
+.d-flex{
+    animation: scale-up-ver-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    
+}
 .img-login{
     width: 50%;
     height: 100vh;
@@ -46,4 +50,32 @@
         font-family: 'Roboto Slab', serif;
     }
 }
+
+#singup{
+    width: 350px;
+    height: 25px;
+    margin-top: 9px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 800;
+    font-family: 'Courier New', Courier, monospace;  
+    transition: 0.5s;
+    &:hover{
+        color: #ffffff;
+        background-color: #4CBC9A;
+    }  
+}
+
+@keyframes scale-up-ver-center {
+    0% {
+      -webkit-transform: scaleY(0.4);
+              transform: scaleY(0.4);
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+    }
+  }
 
