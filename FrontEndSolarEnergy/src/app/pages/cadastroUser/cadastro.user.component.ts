@@ -46,7 +46,7 @@ export class CadastroUserComponent implements OnInit {
       error => {
         this.loading = false;
         console.error("Erro ao efetuar cadastro");
-        //this.alertasService.alertaErroCadastro();
+        this.alertasService.erroAoEfetuarCadastro();
       }
     )
   }
