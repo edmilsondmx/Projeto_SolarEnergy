@@ -47,6 +47,14 @@ export class LoginService {
     localStorage.setItem("refreshToken", refreshToken);
     localStorage.setItem("usuario", user);
     this.router.navigate(['/dashboard']);
+
+    setTimeout(() => {
+      this.limparLocalStorage();
+    }, 648000000);
+  }
+
+  limparLocalStorage(){
+    localStorage.clear();
   }
 
   /* devolverUsuario():Observable<IUser[]>{
