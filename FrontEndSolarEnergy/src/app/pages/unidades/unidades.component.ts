@@ -53,9 +53,14 @@ export class UnidadesComponent implements OnInit {
     this.alertasService.confirmacaoRemocao()
     .then((result) => {
       if (result.isConfirmed) {
-        this.solarEnergyService.deleteUnidade(id).subscribe();
-        this.alertasService.alertaUnidadeRemovida();
-        this.buscarUnidades();
+        this.solarEnergyService.deleteUnidade(id).subscribe((ok) => {
+          this.alertasService.alertaUnidadeRemovida();
+          this.buscarUnidades();
+        },
+        (error) => {
+          this.alertasService.usuarioSemPermissao();
+        });
+        
       }
     });
   }
