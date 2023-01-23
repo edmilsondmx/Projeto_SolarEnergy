@@ -11,6 +11,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { AppComponent } from './app.component';
 import { NgxLoadingModule } from 'ngx-loading';
 import { CadastroUserComponent } from './pages/cadastroUser/cadastro.user.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -46,6 +49,9 @@ const routes: Routes = [
 @NgModule({
   declarations: [],
   exports: [RouterModule],
-  imports: [CommonModule, RouterModule.forRoot(routes)],
+  imports: [
+    CommonModule, 
+    RouterModule.forRoot(routes)
+  ],
 })
 export class AppRoutingModule {}

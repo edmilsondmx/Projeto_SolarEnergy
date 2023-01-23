@@ -20,6 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginService } from './services/Login.service';
 import { CadastroUserComponent } from './pages/cadastroUser/cadastro.user.component';
 import { NgxLoadingModule } from "ngx-loading";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,14 @@ import { NgxLoadingModule } from "ngx-loading";
     HttpClientModule,
     NgChartsModule,
     AppRoutingModule,
-    NgxLoadingModule.forRoot({})
+    NgxLoadingModule.forRoot({}),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-top-right',
+      progressBar: true,
+      closeButton: true,
+    })
     
   ],
   providers: [SolarEnergyApiService, AppRoutingModule, AuthGuard, LoginService],
