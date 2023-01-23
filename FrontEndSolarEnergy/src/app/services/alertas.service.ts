@@ -107,9 +107,14 @@ export class AlertasService {
       positionClass: 'toast-top-center',
     })
   }
+
   cadastroEfetuado(){
     this.toastr.success('','Cadastro efetuado!',{
       positionClass: 'toast-top-center',
     })
+  }
+
+  usuarioSemPermissao(){
+    this.toastr.error('', 'ERRO: Usuário sem permissão!')
   }
 }
