@@ -69,4 +69,9 @@ export class UnidadesComponent implements OnInit {
   cadastroUnidades(){
     this.router.navigate(['unidades/cadastro-unidades']);
   }
+
+  mostrarGeracoes(unidade:IUnidades){
+    this.solarEnergyService.descricaoUnidade = unidade;
+    this.router.navigate(['unidades/geracoes'])
+  }
 }
