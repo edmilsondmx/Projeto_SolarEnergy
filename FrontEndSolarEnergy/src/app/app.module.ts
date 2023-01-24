@@ -22,6 +22,7 @@ import { CadastroUserComponent } from './pages/cadastroUser/cadastro.user.compon
 import { NgxLoadingModule } from "ngx-loading";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { DescricaoUnidComponent } from './components/descricao-unid/descricao-unid.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ToastrModule } from 'ngx-toastr';
     GraficoComponent,
     FooterComponent,
     EditarUnidComponent,
-    CadastroUserComponent
+    CadastroUserComponent,
+    DescricaoUnidComponent
   ],
   imports: [
     BrowserModule,
