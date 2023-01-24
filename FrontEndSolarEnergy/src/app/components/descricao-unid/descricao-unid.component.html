@@ -1,0 +1,42 @@
+<div class="principal">
+    <pro-sidebar></pro-sidebar>
+    <div class="content">
+        <div class="container title">
+            <h1>Unidade: {{ descricaoUnidade.apelido }} 
+                <span class="marcador" [ngStyle]="{
+                'backgroundColor':descricaoUnidade.isActive?'#42b80c':'#df2626'
+            }"></span></h1>
+        </div>
+        <div class="container">
+            <div class="container d-flex justify-content-around mt-3">
+                <h4>Local: <span>{{ descricaoUnidade.local | titlecase }}</span></h4>
+                <h4>Marca: <span>{{ descricaoUnidade.marca | titlecase }}</span></h4>
+                <h4>Modelo: <span>{{ descricaoUnidade.modelo | titlecase }}</span></h4>
+            </div>
+            <h2>Gerações por Unidade</h2>
+            <div class="geracoes">
+                <table>
+                    <thead *ngIf="qtdGeracoes != 0">
+                        <th>ID</th>
+                        <th>Data</th>
+                        <th>Kw</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let geracao of geracoesUnidade | async">
+                            <th>{{ geracao.id }}</th>
+                            <th>{{ geracao.data }}</th>
+                            <th>{{ geracao.kw }}Kw</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div *ngIf="qtdGeracoes == 0" class="my-4 mx-4 alert alert-danger text-center" role="alert">
+            Nenhuma geração cadastrada para essa unidade!
+        </div>
+        <div *ngIf="qtdGeracoes != 0" class="container btn-relatorio">
+            <button>Imprimir <i class="fa fa-print" aria-hidden="true"></i></button>
+        </div>
+    </div>
+</div>
+<pro-footer></pro-footer>
