@@ -3,6 +3,18 @@ Projeto de Cadastro de Unidades Solares utilizando Angular no FrontEnd, C# no Ba
 
 <h3>🚧 Projeto em desenvolvimento 🚧</h3>
 
+<h2>🛠️ Tecnologias Usadas</h2>  
+<ul>
+    <li>C#</li>
+    <li>dotNet</li>
+    <li>Angular</li>
+    <li>Typescript</li>
+    <li>SQL Server</li>
+    <li>HTML</li>
+    <li>SASS</li>
+    <li>BootStrap</li>
+</ul>
+
 <p>Para saber o que fiz até agora:</p>
 
 <ul>
