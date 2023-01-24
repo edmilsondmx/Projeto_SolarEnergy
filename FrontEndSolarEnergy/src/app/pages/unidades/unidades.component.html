@@ -20,7 +20,7 @@
                 <tbody>
                     <tr *ngFor="let unidade of listaUnidades|async" [ngStyle]="{
                         'color':unidade.isActive?'':'#a8aaad'
-                    }">
+                    }" (click)="mostrarGeracoes(unidade)">
                         <th><span class="marcador" [ngStyle]="{
                             'backgroundColor':unidade.isActive?'#42b80c':'#df2626'
                         }"></span></th>

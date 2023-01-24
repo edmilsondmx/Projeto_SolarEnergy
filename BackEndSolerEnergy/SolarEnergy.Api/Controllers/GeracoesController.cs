@@ -17,7 +17,7 @@ public class GeracoesController : ControllerBase
     }
 
     [HttpGet]
-    [Route("~/api/unidades/{idUnidade}/geracoes")]
+    [Route("~/api/Unidades/{idUnidade}/Geracoes")]
     public IActionResult GetByUnidadeId(
         [FromRoute] int idUnidade
     )

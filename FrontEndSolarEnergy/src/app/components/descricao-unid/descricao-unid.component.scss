@@ -41,42 +41,28 @@ table{
     }
     tr{
         border: 1px solid #E8E8E8;
-        cursor: pointer;
-        .marcador{
-            display: inline-block;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-        }
     }
     th{
         padding: 5px;
     }
 }
-
-.btn{
-    border: none;
-    box-shadow: 0px 4px 4px #00000040;
-    border-radius: 4px;
-}
-.btn-success{
-    background-color: #8DB51B; 
-}
-.btn-danger{
-    background: #D82D56;
+.marcador{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    padding-top: 2px;
 }
 
-
-.novaUnidade{
+.btn-relatorio{
     width: 90%;
     text-align: end;
     margin-top: 50px;
     button{
-        width: 200px;
-        padding: 16px 24px;
+        padding: 10px 20px;
         border-radius: 20px;
         gap: 24px;
-        background-color: #4c5df1;
+        background-color: #4CBC9A;
         box-shadow: 0 20px 50px #37455723;
         color: #ffffff;
         font-size: 18px;
@@ -84,27 +70,9 @@ table{
         border: none;
     }
 }
-p{
-    margin: 0;
-    span{
-        margin-left: 60px;
-        display: inline-block;
-        width: 40px;
-        height: 10px;
-    }
-    .ativo{
-        background-color: #42b80c;
 
-    }
-    .inativo{
-        background-color: #df2626;
-
-    }
-}
 pro-footer{
     position: relative;
     bottom: -30px;
     width: 100%;
 }
-
-

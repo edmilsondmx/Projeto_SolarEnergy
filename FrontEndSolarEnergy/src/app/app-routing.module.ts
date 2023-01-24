@@ -14,6 +14,7 @@ import { CadastroUserComponent } from './pages/cadastroUser/cadastro.user.compon
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import { DescricaoUnidComponent } from './components/descricao-unid/descricao-unid.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -39,6 +40,10 @@ const routes: Routes = [
       {
         path: 'editar-unidades',
         component: EditarUnidComponent,
+      },
+      {
+        path: 'geracoes',
+        component: DescricaoUnidComponent,
       },
     ],
   },

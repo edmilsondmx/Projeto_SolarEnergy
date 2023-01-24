@@ -9,6 +9,8 @@ import { AppConstants } from '../app-constants';
 })
 export class SolarEnergyApiService {
 
+  descricaoUnidade!:IUnidades;
+
   novaUnidade:IUnidades = {
     id: 0,
     apelido: "",
@@ -42,6 +44,9 @@ export class SolarEnergyApiService {
   //Métodos das Gerações
   getListGeracoes():Observable<IGeracao[]>{
     return this.http.get<IGeracao[]>(`${this.solarEnergyApiUrl}geracoes`);
+  }
+  getGeracoesByUnidadeId(id:number):Observable<IGeracao[]>{
+    return this.http.get<IGeracao[]>(`${this.solarEnergyApiUrl}unidades/${id}/geracoes`)
   }
   postGeracao(novaGeracao:IGeracao){
     return this.http.post(`${this.solarEnergyApiUrl}geracoes`, novaGeracao);
