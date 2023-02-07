@@ -9,7 +9,7 @@ import { SolarEnergyApiService } from 'src/app/services/SolarEnergyApi.service';
   styleUrls: ['./descricao-unid.component.scss']
 })
 export class DescricaoUnidComponent implements OnInit {
-
+  userActive:string | null = localStorage.getItem("usuario");
   descricaoUnidade!:IUnidades;
   geracoesUnidade!:Observable<IGeracao[]>;
   qtdGeracoes:number = 0;
@@ -27,7 +27,41 @@ export class DescricaoUnidComponent implements OnInit {
     this.geracoesUnidade.subscribe((result:IGeracao[]) => {
       this.qtdGeracoes = result.length;
     })
+  }
+
+  download(){
+    const element:HTMLElement | null = document.getElementById("myElement");
     
+    if(!element){
+      console.error("Element not found!");
+      return;
+    }
+    let table = "";
+    let data = "";
+    for (let child of Array.from(element.children)) {
+      for (let filhos of Array.from(child.children)){
+        table += filhos.textContent + "\n\n";
+      }
+      data = table + "\n";
+    }
+    
+    data = data.replace(/Imprimir/g, "Impresso por:"+ this.userActive);
+    let fileName = this.descricaoUnidade.apelido;
+
+    const blob = new Blob([data], { type: "text/plain" });
+
+
+    const link = document.createElement("a");
+    link.style.display = "none";
+    document.body.appendChild(link);
+
+    link.href = URL.createObjectURL(blob);
+
+    link.setAttribute("download", fileName+".txt");
+
+    link.click();
+
+    document.body.removeChild(link);
   }
 
 }
