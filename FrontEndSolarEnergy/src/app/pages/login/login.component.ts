@@ -54,14 +54,10 @@ export class LoginComponent implements OnInit {
     this.buscarUsuario(this.user);
   } */
 
-  //método para deixar a senha visível ou não
   visualizarSenha() {
-    let senha = document.getElementById('password');
-    if (this.visualizar) {
-      senha?.setAttribute('type', 'password');
-    } else {
-      senha?.setAttribute('type', 'text');
-    }
+    const senha = document.querySelector('#password') as HTMLInputElement;
+    senha.type = this.visualizar ? 'password' : 'text';
     this.visualizar = !this.visualizar;
   }
+
 }

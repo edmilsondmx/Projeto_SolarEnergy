@@ -51,13 +51,9 @@ export class CadastroUserComponent implements OnInit {
     )
   }
 
-  visualizarSenha(){
-    let senha = document.getElementById('password')
-    if(this.visualizar){
-      senha?.setAttribute('type', 'password');
-    }else{
-      senha?.setAttribute('type', 'text');
-    }
+  visualizarSenha() {
+    const senha = document.querySelector('#password') as HTMLInputElement;
+    senha.type = this.visualizar ? 'password' : 'text';
     this.visualizar = !this.visualizar;
   }
 }
