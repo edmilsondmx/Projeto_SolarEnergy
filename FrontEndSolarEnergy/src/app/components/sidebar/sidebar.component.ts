@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
+import { IUser } from 'src/app/models/interface';
 
 @Component({
   selector: 'pro-sidebar',
@@ -7,6 +8,7 @@ import { Router} from '@angular/router';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
+  userActive:string | null = localStorage.getItem("usuario");
 
   constructor(private router:Router) { }
 
