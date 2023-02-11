@@ -16,11 +16,12 @@
                     <th>Modelo</th>
                     <th></th>
                     <th></th>
+                    <th></th>
                 </thead>
                 <tbody>
                     <tr *ngFor="let unidade of listaUnidades|async" [ngStyle]="{
                         'color':unidade.isActive?'':'#a8aaad'
-                    }" (click)="mostrarGeracoes(unidade)">
+                    }">
                         <th><span class="marcador" [ngStyle]="{
                             'backgroundColor':unidade.isActive?'#42b80c':'#df2626'
                         }"></span></th>
@@ -31,12 +32,20 @@
                         <th>{{ unidade.modelo }}</th>
                         <th><button class="btn btn-success" (click)="editarUnid(unidade.id)"><i class="fa-regular fa-pen-to-square"></i></button></th>
                         <th><button class="btn btn-danger" (click)="removerUnid(unidade.id)"><i class="fa-regular fa-trash-can"></i></button></th>
+                        <th><button class="btn btn-info" (click)="mostrarGeracoes(unidade)"><i class="fa-solid fa-print"></i></button></th>
                     </tr>
                 </tbody>
             </table>
             <p><span class="ativo"></span><small> - Unidades Ativa</small></p>
             <p><span class="inativo"></span><small> - Unidades Inativa</small></p>
         </div>
+        <!-- <ngb-pagination
+            class="d-flex justify-content-center mt-5"
+            [(page)]="page"
+            [pageSize]="pageSize"
+            [collectionSize]="cardSize"
+            *ngIf="cardSize > 0">
+        </ngb-pagination> -->
         <div class="container novaUnidade">
             <button (click)="cadastroUnidades()">Nova Unidade</button>
         </div>

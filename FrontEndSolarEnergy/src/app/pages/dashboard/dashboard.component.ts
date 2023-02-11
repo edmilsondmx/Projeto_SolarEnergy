@@ -12,11 +12,9 @@ import { UnidadesService } from 'src/app/services/unidades.service';
 })
 export class DashboardComponent implements OnInit {
 
-  //listas de unidades e gerações consumidas do Json-server
   listaUnidades!:Observable<IUnidades[]>;
   listaGeracao!:Observable<IGeracao[]>;
 
-  //variáveis onde são guardados os valores dos cards do dashboard
   totalDeUnidades:number = 0;
   unidadesAtivas:number = 0;
   unidadesInativas:number = 0;
@@ -33,7 +31,6 @@ export class DashboardComponent implements OnInit {
     this.buscarUnidades();
   }
 
-  //método que chama a função de buscar as unidades do json-server
   buscarUnidades(){
     this.listaUnidades = this.solarEnergyService.getListUnidades();
     this.totalunidades();
@@ -41,14 +38,12 @@ export class DashboardComponent implements OnInit {
     this.mediaEnergia();
   }
 
-  //método que inclui a quantidade de unidades da lista na variavel
   totalunidades(){
     this.listaUnidades.subscribe((result) =>{
       this.totalDeUnidades = result.length
     })
   }
 
-  //método que verifica a quantidade de unidades ativa e inativa e guarda na variavel
   isActive(){
     this.listaUnidades.subscribe((result) => {
       result.forEach((item) => {
@@ -61,20 +56,18 @@ export class DashboardComponent implements OnInit {
     }) 
   }
 
-  //método que tira a média de kw das unidades e guarda na variavel, se não tiver nenhuma geração ainda, é retornado 0
-  mediaEnergia(){
+  
+  mediaEnergia() {
     this.listaGeracao = this.solarEnergyService.getListGeracoes();
-    this.listaGeracao.subscribe((result) => {
-      if(result.length){
-        let totalEnergia = result.reduce((soma, item) => 
-          (soma + item.kw), 0) / this.unidadesAtivas;
-        if(this.unidadesAtivas == 0){
-          this.mediaDeEnergia == 0;
-        }else{
-          this.mediaDeEnergia = totalEnergia.toFixed(0);
-        }
+    this.listaGeracao.subscribe(result => {
+      if (result.length) {
+        const totalEnergia = result.reduce((soma, item) => (soma + item.kw), 0);
+        this.mediaDeEnergia = totalEnergia / this.unidadesAtivas;
+        this.mediaDeEnergia = this.unidadesAtivas
+          ? this.mediaDeEnergia.toFixed(0)
+          : 0;
       }
-    })
+    });
   }
 
 }
