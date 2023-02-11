@@ -9,6 +9,7 @@ public class User
     public string Nome { get; set; }
     public string Email { get; set; }
     public string Password { get; set; }
+    public string Image { get; set; }
     public Permissoes Role { get; set; }
 
     public User(UserDto user)
@@ -17,6 +18,7 @@ public class User
         Nome = user.Nome;
         Email = user.Email;
         Password = user.Password;
+        Image = user.Image;
         Role = user.Role;
     }
     public User()
