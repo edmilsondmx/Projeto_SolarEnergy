@@ -16,6 +16,15 @@
                 placeholder="Nome Completo"
                 required>
             </div>
+            <div class="input-signup ficheiro">
+                <i class="fa-solid fa-id-badge"></i>
+                <input 
+                class="form-control"
+                accept="image/PNG, image/JPG, image/JPEG"
+                type="file" 
+                name="image"
+                (change)="onChange($event)">
+            </div>
             <div class="input-signup" for="">
                 <i class="fas fa-envelope"></i>
                 <input 
