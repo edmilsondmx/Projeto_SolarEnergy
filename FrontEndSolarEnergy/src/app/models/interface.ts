@@ -1,3 +1,5 @@
+import { Observable } from "rxjs";
+
 export interface IUnidades {
     id:number;
     apelido:string;
@@ -24,6 +26,7 @@ export interface IUser {
     nome:string;
     email:string;
     password:string;
+    image?:string | Observable<any>;
     role:number
 }
 
