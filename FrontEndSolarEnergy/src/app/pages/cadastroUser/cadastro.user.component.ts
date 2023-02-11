@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { Subscriber } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
 import { IUser } from 'src/app/models/interface';
 import { AlertasService } from 'src/app/services/alertas.service';
 import { CadastroService } from 'src/app/services/cadastro.service';
@@ -12,7 +14,6 @@ import { SolarEnergyApiService } from 'src/app/services/SolarEnergyApi.service';
   styleUrls: ['./cadastro.user.component.scss']
 })
 export class CadastroUserComponent implements OnInit {
-
   public loading = false;
 
   visualizar:boolean = false;
@@ -49,6 +50,40 @@ export class CadastroUserComponent implements OnInit {
         this.alertasService.erroAoEfetuarCadastro();
       }
     )
+  }
+
+  onChange($event: any) {
+    if ($event.target.files[0].size >= 10240000) {
+      window.alert('tamanho não é permitido');
+      $event.target.value = null;
+    } else {
+      const file = $event.target.files[0];
+      this.convertToBase64(file);
+    }
+  }
+
+  convertToBase64(file: File) {
+    const imageTrasfer = new Observable((subscriber: Subscriber<any>) => {
+      this.readFile(file, subscriber);
+    });
+    imageTrasfer.subscribe((d) => {
+      console.log(d);
+      this.newUser.image = imageTrasfer;
+    });
+  }
+
+  readFile(file: File, subscriber: Subscriber<any>) {
+    const filereader = new FileReader();
+    filereader.readAsDataURL(file);
+
+    filereader.onload = () => {
+      subscriber.next(filereader.result);
+      subscriber.complete();
+    };
+    filereader.onerror = (error) => {
+      subscriber.error(error);
+      subscriber.complete();
+    };
   }
 
   visualizarSenha() {
