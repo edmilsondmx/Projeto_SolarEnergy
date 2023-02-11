@@ -10628,11 +10628,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Edmilson\\Documents\\Estudos\\Projeto_SolarEnergy\\BackEndSolerEnergy\\SolarEnergy.Api\\SolarEnergy.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Edmilson\\Documents\\Estudos\\Projeto_SolarEnergy\\BackEndSolerEnergy\\SolarEnergy.Api\\SolarEnergy.Api.csproj",
       "projectName": "SolarEnergy.Api",
-      "projectPath": "c:\\Users\\Edmilson\\Documents\\Estudos\\Projeto_SolarEnergy\\BackEndSolerEnergy\\SolarEnergy.Api\\SolarEnergy.Api.csproj",
+      "projectPath": "C:\\Users\\Edmilson\\Documents\\Estudos\\Projeto_SolarEnergy\\BackEndSolerEnergy\\SolarEnergy.Api\\SolarEnergy.Api.csproj",
       "packagesPath": "C:\\Users\\Edmilson\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Edmilson\\Documents\\Estudos\\Projeto_SolarEnergy\\BackEndSolerEnergy\\SolarEnergy.Api\\obj\\",
+      "outputPath": "C:\\Users\\Edmilson\\Documents\\Estudos\\Projeto_SolarEnergy\\BackEndSolerEnergy\\SolarEnergy.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -10653,11 +10653,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "c:\\Users\\Edmilson\\Documents\\Estudos\\Projeto_SolarEnergy\\BackEndSolerEnergy\\SolarEnergy.Di\\SolarEnergy.Di.csproj": {
-              "projectPath": "c:\\Users\\Edmilson\\Documents\\Estudos\\Projeto_SolarEnergy\\BackEndSolerEnergy\\SolarEnergy.Di\\SolarEnergy.Di.csproj"
+            "C:\\Users\\Edmilson\\Documents\\Estudos\\Projeto_SolarEnergy\\BackEndSolerEnergy\\SolarEnergy.Di\\SolarEnergy.Di.csproj": {
+              "projectPath": "C:\\Users\\Edmilson\\Documents\\Estudos\\Projeto_SolarEnergy\\BackEndSolerEnergy\\SolarEnergy.Di\\SolarEnergy.Di.csproj"
             },
-            "c:\\Users\\Edmilson\\Documents\\Estudos\\Projeto_SolarEnergy\\BackEndSolerEnergy\\SolarEnergy.Domain\\SolarEnergy.Domain.csproj": {
-              "projectPath": "c:\\Users\\Edmilson\\Documents\\Estudos\\Projeto_SolarEnergy\\BackEndSolerEnergy\\SolarEnergy.Domain\\SolarEnergy.Domain.csproj"
+            "C:\\Users\\Edmilson\\Documents\\Estudos\\Projeto_SolarEnergy\\BackEndSolerEnergy\\SolarEnergy.Domain\\SolarEnergy.Domain.csproj": {
+              "projectPath": "C:\\Users\\Edmilson\\Documents\\Estudos\\Projeto_SolarEnergy\\BackEndSolerEnergy\\SolarEnergy.Domain\\SolarEnergy.Domain.csproj"
             }
           }
         }

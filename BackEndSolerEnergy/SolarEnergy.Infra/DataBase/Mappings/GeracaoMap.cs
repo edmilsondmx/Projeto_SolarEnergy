@@ -14,10 +14,12 @@ public class GeracaoMap : IEntityTypeConfiguration<Geracao>
 
         builder
             .Property(g => g.Data)
+            .HasColumnName("DATA")
             .IsRequired();
 
         builder
             .Property(g => g.Kw)
+            .HasColumnName("KW")
             .HasColumnType("int")
             .IsRequired();
 
