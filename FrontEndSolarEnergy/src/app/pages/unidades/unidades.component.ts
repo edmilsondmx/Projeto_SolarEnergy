@@ -14,6 +14,10 @@ import { UnidadesService } from 'src/app/services/unidades.service';
 })
 export class UnidadesComponent implements OnInit {
 
+  // page = 1;
+  // pageSize = 20;
+  // cardSize = 0;
+
   listaUnidades!:Observable<IUnidades[]>;
 
   constructor(

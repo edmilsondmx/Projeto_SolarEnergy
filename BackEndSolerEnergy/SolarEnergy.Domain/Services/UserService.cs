@@ -35,9 +35,12 @@ public class UserService : IUserService
         return new UserDto(userDb);
     }
 
-    public Tuple<string, string, string> GetUser(LoginDto login)
+    public Tuple<string, string, string> GetUser(LoginDto loginDto)
     {
-        User userDb = _userRepository.Get().ToList().FirstOrDefault(u => u.Email == login.Email && u.Password == login.Password);
+        if (loginDto.Email == null || loginDto.Password == null)
+            throw new NoDataException("Email ou senha não preenchidos");
+
+        User userDb = _userRepository.VerifyLogin(new Login(loginDto));
 
         if(userDb == null) 
             throw new UserNaoEncontradoException("Usuário não encontrado");

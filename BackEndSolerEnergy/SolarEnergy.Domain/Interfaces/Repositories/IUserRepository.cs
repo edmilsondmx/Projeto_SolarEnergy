@@ -26,4 +26,5 @@ public interface IUserRepository
     /// </summary>
     /// <param name="User">The user to delete.</param>
     void Delete(User user);
+    User VerifyLogin(Login login);
 }

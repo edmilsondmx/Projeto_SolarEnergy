@@ -25,14 +25,14 @@
 
 .signup{
     .input-signup{
-        width: 350px;
+        width: 480px;
         height: 55px;
         border: 1px solid black;
         border-radius: 10px;
         margin-top: 19px;
         padding: 10px;
         input{
-            width: 80%;
+            width: 90%;
             border: none;
             margin-left: 10px;
             padding: 5px;
@@ -57,6 +57,10 @@
             background-color: #4CBC9A;
         } 
     }
+}
+.ficheiro{
+    display: flex;
+    align-items: center;
 }
 
 #login{

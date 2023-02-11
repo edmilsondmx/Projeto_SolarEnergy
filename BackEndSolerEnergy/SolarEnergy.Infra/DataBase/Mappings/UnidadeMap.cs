@@ -14,30 +14,35 @@ public class UnidadeMap : IEntityTypeConfiguration<Unidade>
 
         builder
             .Property(u => u.Apelido)
+            .HasColumnName("APELIDO")
             .HasColumnType("VARCHAR")
             .HasMaxLength(50)
             .IsRequired();
         
         builder
             .Property(u => u.Local)
+            .HasColumnName("LOCAL")
             .HasColumnType("VARCHAR")
             .HasMaxLength(100)
             .IsRequired();
         
         builder
             .Property(u => u.Marca)
+            .HasColumnName("MARCA")
             .HasColumnType("VARCHAR")
             .HasMaxLength(50)
             .IsRequired();
         
         builder
             .Property(u => u.Modelo)
+            .HasColumnName("MODELO")
             .HasColumnType("VARCHAR")
             .HasMaxLength(100)
             .IsRequired();
         
         builder
             .Property(u => u.IsActive)
+            .HasColumnName("ACTIVE")
             .IsRequired();
         
     }
