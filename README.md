@@ -1,4 +1,6 @@
 # Projeto_SolarEnergy
+
+<img src="./solarEnegy.png" />
 Projeto de Cadastro de Unidades Solares utilizando Angular no FrontEnd, C# no BackEnd e SQL Server no banco de dados
 
 <h3>🚧 Projeto em desenvolvimento 🚧</h3>
@@ -33,6 +35,7 @@ $ git clone https://github.com/edmilsondmx/Projeto_SolarEnergy
         "ServerConnection": "Server=localhost\\SQLEXPRESS;Database=SOlarEnergy;Trusted_Connection=True;"
         }
         ```
+
 </li>
 
 <ul>
@@ -49,6 +52,6 @@ login: admin@email.com
 senha: 101010
 ```
 
-
 ## Autor
+
 Edmilson Gomes 😊
