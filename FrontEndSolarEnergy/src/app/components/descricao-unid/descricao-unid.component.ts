@@ -45,7 +45,15 @@ export class DescricaoUnidComponent implements OnInit {
       data = table + "\n";
     }
     
-    data = data.replace(/Imprimir/g, "Impresso por:"+ this.userActive);
+    let dataHora = new Date();
+    data = data.replace(/Imprimir/g, "Impresso por:"+ this.userActive + "\n" + dataHora.toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit"
+    }));
     let fileName = this.descricaoUnidade.apelido;
 
     const blob = new Blob([data], { type: "text/plain" });

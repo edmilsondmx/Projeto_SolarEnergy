@@ -29,13 +29,13 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.serviceTitle.setTitle('Solar Energy - Dashboard');
     this.buscarUnidades();
+    this.mediaEnergia();
   }
 
   buscarUnidades(){
     this.listaUnidades = this.solarEnergyService.getListUnidades();
     this.totalunidades();
     this.isActive();
-    this.mediaEnergia();
   }
 
   totalunidades(){
